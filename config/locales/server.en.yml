@@ -1,0 +1,5 @@
+en:
+  site_settings:
+    salesforce_enabled: 'Enable Salesforce ticket creation'
+    salesforce_url: "The Salesforce URL"
+    sforce_api_token: "Your Salesforce API token"

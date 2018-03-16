@@ -1,0 +1,10 @@
+plugins:
+  salesforce_enabled:
+    default: false
+    client: true
+
+  salesforce_url:
+    default: ''
+
+  sforce_api_token:
+    default: ''
