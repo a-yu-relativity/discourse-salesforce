@@ -5,6 +5,12 @@ plugins:
 
   salesforce_url:
     default: ''
+    client: true
 
   sforce_api_token:
     default: ''
+    client: true
+
+  max_chars:
+    default: 2000
+    client: false

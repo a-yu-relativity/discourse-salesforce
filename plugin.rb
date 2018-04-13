@@ -12,4 +12,20 @@ PLUGIN_NAME = "discourse_salesforce".freeze
 
 after_initialize do
     
+  require_depedency "application_controller"  # from main discourse
+
+  class Salesforce::TicketController < ApplicationController
+    # Creates a Salesforce ticket.
+    def create
+      post = Post.find(params[:id].to_i)
+      topic = post.topic
+    end
+
+    # Validates that Salesforce API credentials are present.
+    def has_sforce_creds?
+      return false if (SiteSetting.salesforce_url.blank? || 
+                       SiteSetting.sforce_api_token.blank?)
+      true
+    end
+  end
 end
