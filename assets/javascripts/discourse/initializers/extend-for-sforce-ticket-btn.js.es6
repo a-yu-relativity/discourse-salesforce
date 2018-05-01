@@ -41,7 +41,9 @@ function initializeWithApi(api) {
 			}
 		}
 		else {
-
+			return {
+				
+			}
 		}
 	});
 

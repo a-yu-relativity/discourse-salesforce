@@ -12,7 +12,16 @@ PLUGIN_NAME = "discourse_salesforce".freeze
 
 after_initialize do
     
-  require_depedency "application_controller"  # from main discourse
+  
+
+  module ::Salesforce
+    class Engine < ::Rails::Engine
+      engine_name PLUGIN_NAME
+      isolate_namespace Salesforce
+    end
+  end
+
+  require_dependency "application_controller"  # from main discourse
 
   class Salesforce::TicketController < ApplicationController
     # Creates a Salesforce ticket.
